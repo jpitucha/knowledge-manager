@@ -26,6 +26,7 @@ class KnowledgeManager {
         }
         this.kb.splice(noteIndex, 1)
         this.kb.push(note)
+        return note;
     }
 
     delete(title) {
@@ -33,7 +34,9 @@ class KnowledgeManager {
         if (existingNoteIndex == -1) {
             return console.log('Note does not exist')
         }
+        const existingNote = this.kb[existingNoteIndex]
         this.kb.splice(existingNoteIndex, 1)
+        return existingNote
     }
 
     search(title) {
